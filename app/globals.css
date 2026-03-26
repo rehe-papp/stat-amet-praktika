@@ -2,14 +2,36 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-roboto);
   --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /*brändivärvid */
+  --stat-black: #000000;
+  --stat-white: #ffffff;
+  --stat-gray-dark: #565656;
+  --stat-gray-medium: #dddddd;
+  --stat-gray-light: #f8f8f8;
+  --stat-error: #dc1919;
+  --stat-success: #4dc14d;
+
+
+  --bg-color: #fff;
+  --dot-pattern: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
+}
+
+.bg-stat-brand {
+  background-color: var(--bg-color);
+  background-image: var(--dot-pattern);
+  background-size: 18px 18px;
+  background-repeat: repeat;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +44,159 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+}
+
+.quiz-page {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--stat-black);
+  padding: 1.5rem;
+}
+
+.quiz-card {
+  margin: 0 auto;
+  max-width: 56rem;
+  border: 1px solid var(--stat-gray-medium);
+  border-radius: 0;
+  background: var(--stat-white);
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quiz-title {
+  margin-bottom: 1rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--stat-black);
+}
+
+.quiz-question {
+  margin-bottom: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--stat-black);
+}
+
+.quiz-subquestion {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--stat-black);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  width: 100%;
+  border: 1px solid var(--stat-gray-medium);
+  background: var(--stat-white);
+  border-radius: 0;
+  padding: 0.75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: var(--stat-gray-dark);
+}
+
+.quiz-option:hover {
+  border-color: var(--stat-black);
+  background: var(--stat-white);
+  color: var(--stat-black);
+}
+
+.quiz-option--selected {
+  border-color: var(--stat-black);
+  background: var(--stat-gray-light);
+  color: var(--stat-black);
+}
+
+.quiz-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+}
+
+.quiz-feedback--correct {
+  background: var(--stat-white);
+  color: var(--stat-success);
+  border: 1px solid var(--stat-success);
+}
+
+.quiz-feedback--wrong {
+  background: var(--stat-white);
+  color: var(--stat-error);
+  border: 1px solid var(--stat-error);
+}
+
+.quiz-button {
+  margin-top: 1.25rem;
+  border-radius: 0;
+  border: 1px solid var(--stat-black);
+  background: var(--stat-black);
+  color: var(--stat-white);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.quiz-button:hover {
+  border-color: var(--stat-gray-dark);
+  background: var(--stat-white);
+  color: var(--stat-black);
+}
+
+.quiz-button:disabled {
+  background: var(--stat-gray-medium);
+  border-color: var(--stat-gray-medium);
+  color: var(--stat-black);
+  cursor: not-allowed;
+}
+
+.quiz-results-box {
+  margin-bottom: 1rem;
+  border: 1px solid var(--stat-gray-medium);
+  background: var(--stat-white);
+  border-radius: 0;
+  padding: 1rem;
+  color: var(--stat-black);
+}
+
+.quiz-table-container {
+  overflow-x: auto;
+  border: 1px solid var(--stat-gray-medium);
+  border-radius: 0;
+}
+
+.quiz-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.quiz-table th,
+.quiz-table td {
+  border: 1px solid var(--stat-gray-light);
+  padding: 0.5rem;
+  text-align: left;
+  color: var(--stat-black);
+}
+
+.quiz-table thead {
+  background: var(--stat-gray-light);
+  font-weight: 600;
+  color: var(--stat-black);
+}
+
+.quiz-table tr:hover {
+  background: var(--stat-gray-medium);
 }
