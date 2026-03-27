@@ -96,7 +96,7 @@ export function Quiz({ initialQuestions = questions }: QuizProps) {
             </div>
 
             {submitted && (
-              <p className={`quiz-feedback ${feedback === "Õige vastus!" ? "quiz-feedback--correct" : "quiz-feedback--wrong"}`}>
+              <p className={`quiz-feedback ${feedback === "Õige!" ? "quiz-feedback--correct" : "quiz-feedback--wrong"}`}>
                 {feedback}
               </p>
             )}
