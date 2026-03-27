@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #000000;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto);
-  --font-mono: var(--font-geist-mono);
-}
 
 :root {
   /*brändivärvid */
@@ -34,16 +23,10 @@
   background-repeat: repeat;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--stat-black);
+  color: var(--stat-white);
   font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
 }
 

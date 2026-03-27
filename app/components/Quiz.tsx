@@ -37,7 +37,7 @@ export function Quiz({ initialQuestions = questions }: QuizProps) {
     if (selectedIndex < 0 || submitted) return;
 
     const isCorrect = selectedIndex === currentQuestion.correctIndex;
-    setFeedback(isCorrect ? "Õige vastus!" : "Vale vastus.");
+    setFeedback(isCorrect ? "Õige!" : "Vale!");
     setSubmitted(true);
 
     const newAnswer: Answer = {
